@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CodingTracker.Data;
 
 namespace CodingTracker.Interface
 {
@@ -16,6 +17,8 @@ namespace CodingTracker.Interface
         public List<CodingSession> LoadData();
 
         public void DeleteData(int Id);
+
+        public void UpdateData(int Id, UserInput userInput);
 
     }
 }

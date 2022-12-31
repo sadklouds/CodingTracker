@@ -12,6 +12,20 @@ namespace CodingTracker.StaticHelper
         public static void EndTimeMessage() => Console.WriteLine("\nEnd Date & Time");
         public static void EmptyTableMessage() => Console.WriteLine("\nTable contains no data");
 
-        public static void EnterIdMessage() => Console.WriteLine("\nEnter Code Session ID number");
+        public static void EnterIdMessage() => Console.Write("\nEnter Code Session ID number: ");
+
+        public static void IdErrorMessage(int Id)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($"\nCode Session with id:{Id} does not exist");
+            Console.ForegroundColor = ConsoleColor.White;
+        }
+
+        public static void OperationErrorMessage()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($"\nAn error has occured Operation has failed!");
+            Console.ForegroundColor = ConsoleColor.White;
+        }
     }
 }

@@ -15,9 +15,10 @@ namespace CodingTracker.StaticHelper
             Console.WriteLine("Track coding sessions");
             Console.WriteLine("--------------------");
             Console.WriteLine("1: View All Records.");
-            Console.WriteLine("2: Insert Records.");
-            Console.WriteLine("3: Delete Record");
-            Console.WriteLine("4: Update Record");
+            Console.WriteLine("2: Insert CodeSession Manually.");
+            Console.WriteLine("3: Code Session Stop Watch");
+            Console.WriteLine("4: Delete Code Session");
+            Console.WriteLine("5: Update Record");
             Console.WriteLine("0: Exit Program");
             Console.WriteLine("--------------------");
         }

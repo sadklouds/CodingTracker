@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 using CodingTracker.Interface;
 using CodingTracker.StaticHelper;
 using CodingTracker.Data;
-using CodingTracker.Logic;
 
-namespace CodingTracker
+
+namespace CodingTracker.Controller
 {
     public  class CodingController
     {
         UserInput userInput = new();
         IDataAccess DataBase = new SQLiteDataAcess();
-        CRUDOperations CRUD = new();
+        CRUDOperationController CRUD = new();
 
-       
+       // controlls the access to different operations
         public void Run()
         {
             DataBase.CreateDB();
@@ -32,12 +32,17 @@ namespace CodingTracker
                         CRUD.CodingSessionsTable(DataBase);
                         break;
                     case 2:
-                        CRUD.CreateCodeSession(DataBase);
+                        CRUD.CreateManualCodeSession(DataBase);
                         break;
                     case 3:
+                        CRUD.StopWatch(DataBase);
+                        break;
+                    case 4:
                         CRUD.DeleteCodeSession(DataBase);
                         break;
-
+                    case 5:
+                        CRUD.UpdateCodeSession(DataBase);
+                        break;
                     case 0:
                         Console.WriteLine("Exiting Program...");
                         return;

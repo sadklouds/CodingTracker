@@ -41,7 +41,7 @@ namespace CodingTracker.Data
             {
                 connection.Open();
                 var input = connection.CreateCommand();
-                input.CommandText = $"INSERT INTO codeSessions(StartTime, EndTime, Duration) VALUES ('{startTime.ToString()}', '{endTime.ToString()}', '{duration.ToString()}')";
+                input.CommandText = $"INSERT INTO codeSessions(StartTime, EndTime, Duration) VALUES ('{startTime.ToString()}', '{endTime.ToString()}', '{duration.ToString(@"hh\:mm\:ss")}')"; // ensure that stopwatch time span is correct format when inserted
                 try
                 {
                     input.ExecuteNonQuery();
@@ -61,15 +61,24 @@ namespace CodingTracker.Data
         {
             using (var connection = new SqliteConnection(LoadConnectionString("Default")))
             {
-                connection.Open();
-                var input = connection.CreateCommand();
-                input.CommandText = $"DELETE FROM codeSessions WHERE Id == {Id}";
+                try
+                {
+                    connection.Open();
+                    var input = connection.CreateCommand();
+                    input.CommandText = $"DELETE FROM codeSessions WHERE Id == {Id}";
+                    int count = input.ExecuteNonQuery();
+                    //if the id does not equal anything in data base then deletion failed
+                    if (count == 0) StaticMessages.IdErrorMessage(Id);
+                    else Console.WriteLine($"\ncode session {Id} has been deleted successfully");
 
-                int count = input.ExecuteNonQuery();
-                //if the id does not equal anithing in data base then deletion failed
-                if (count == 0) Console.WriteLine($"\nRecord with id:{Id} does not exist");
-                else Console.WriteLine($"\ncode session {Id} has been deleted successfully");
-                connection.Close();
+                    connection.Close();
+                } 
+                catch (Exception e) 
+                {
+                    StaticMessages.OperationErrorMessage();
+                    Console.WriteLine(e);
+                }
+
             }
         }
 
@@ -103,6 +112,43 @@ namespace CodingTracker.Data
             }
         }
 
+
+        public void UpdateData(int Id, UserInput userInput)
+        {
+            using (var connection = new SqliteConnection(LoadConnectionString("Default")))
+            {
+                connection.Open();
+                var check = connection.CreateCommand();
+                check.CommandText = $"SELECT * FROM codeSessions WHERE Id == {Id}";
+                int checkID = Convert.ToInt32(check.ExecuteScalar());
+                try
+                {
+                    if (checkID != 0)
+                    {
+                        StaticMessages.StartDateMessage();
+                        DateTime startTime = userInput.EnterDateTime();
+
+                        StaticMessages.EndTimeMessage();
+                        DateTime endTime = userInput.EndTime(startTime);
+
+                        TimeSpan duration = endTime - startTime;
+
+                        var update = connection.CreateCommand();
+                        update.CommandText = $"UPDATE codeSessions SET StartTime = '{startTime}', EndTime = '{startTime}', Duration = '{duration}' WHERE Id == {Id}";
+                        update.ExecuteNonQuery();
+                        Console.WriteLine($"\nCode Session with {Id} was successfuly updated");
+                        connection.Close();
+                    }
+                    else
+                        StaticMessages.IdErrorMessage(Id);
+
+                } catch(Exception e)
+                {
+                    StaticMessages.OperationErrorMessage();
+                    Console.WriteLine(e);
+                }
+            }
+        }
 
     }
 }

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CodingTracker.Logic;
 
 namespace CodingTracker.Data
 {
@@ -11,12 +10,19 @@ namespace CodingTracker.Data
     {
         private Validation validation = new Validation();
 
-
+        public string UserInputString() 
+        {
+            string ?input;
+            do
+            {
+                input = Console.ReadLine();
+            } while (input == null);
+            return input;
+        } 
         public int UserIntInput()
         {
             while (true)
             {
-                //Console.Write("\nEnter the operation you wish to perform: ");
                 if (int.TryParse(Console.ReadLine(), out int option)) return option;
                 Console.WriteLine("Invalid input given");
             }
@@ -35,7 +41,7 @@ namespace CodingTracker.Data
             }
         }
 
-
+        // uses EnterDateTime method to get the data and format validation, this method will validate if it is after the given start date
         public DateTime EndTime(DateTime startTime)
         {
             while (true)
