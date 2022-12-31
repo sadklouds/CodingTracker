@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mqVB+NeeJHc3QyGAaFMYmR2QuI1UCsAu4bvMfGjav64SLHi9EL7HLXhk3vXsXJ7SFshxTsP4lbkXlk299Wrvvg==",
+  "dgSpecHash": "CxLn4BrEjn3WUAt4DxcCqEsmZZRmrs6GdNbc0Ch2tdg4amT+Iv5Z2k4pMsPLqK4FpVFc/ErYVFwNWDfRFtftdw==",
   "success": true,
-  "projectFilePath": "C:\\MegaSync\\C#Journey\\Projects\\Main\\CodingTracker\\CodingTracker\\CodingTracker.csproj",
+  "projectFilePath": "C:\\MegaSync\\C#Journey\\Forks\\CodingTrackerReview\\CodeReviews.Console.CodingTracker\\CodingTracker.sadklouds\\CodingTracker\\CodingTracker.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\reece\\.nuget\\packages\\consoletableext\\3.2.0\\consoletableext.3.2.0.nupkg.sha512",
     "C:\\Users\\reece\\.nuget\\packages\\microsoft.data.sqlite\\7.0.1\\microsoft.data.sqlite.7.0.1.nupkg.sha512",

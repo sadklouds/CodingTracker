@@ -671,11 +671,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\MegaSync\\C#Journey\\Projects\\Main\\CodingTracker\\CodingTracker\\CodingTracker.csproj",
+      "projectUniqueName": "C:\\MegaSync\\C#Journey\\Forks\\CodingTrackerReview\\CodeReviews.Console.CodingTracker\\CodingTracker.sadklouds\\CodingTracker\\CodingTracker.csproj",
       "projectName": "CodingTracker",
-      "projectPath": "C:\\MegaSync\\C#Journey\\Projects\\Main\\CodingTracker\\CodingTracker\\CodingTracker.csproj",
+      "projectPath": "C:\\MegaSync\\C#Journey\\Forks\\CodingTrackerReview\\CodeReviews.Console.CodingTracker\\CodingTracker.sadklouds\\CodingTracker\\CodingTracker.csproj",
       "packagesPath": "C:\\Users\\reece\\.nuget\\packages\\",
-      "outputPath": "C:\\MegaSync\\C#Journey\\Projects\\Main\\CodingTracker\\CodingTracker\\obj\\",
+      "outputPath": "C:\\MegaSync\\C#Journey\\Forks\\CodingTrackerReview\\CodeReviews.Console.CodingTracker\\CodingTracker.sadklouds\\CodingTracker\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
