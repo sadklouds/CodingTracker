@@ -45,12 +45,12 @@ namespace CodingTracker.Data
                 try
                 {
                     input.ExecuteNonQuery();
-                    Console.WriteLine("Data Inserted successfully");
+                    Console.WriteLine("\nData Inserted successfully");
                     connection.Close();
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine("Data not Inserted");
+                    Console.WriteLine("\nData not Inserted");
                     Console.WriteLine(e);
                     connection.Close();
                 }

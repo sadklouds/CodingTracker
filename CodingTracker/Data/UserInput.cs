@@ -31,7 +31,7 @@ namespace CodingTracker.Data
         {
             while (true)
             {
-                Console.Write("\nEnter date and time as dd/MM/yyyy hh:mm AM/PM: ");
+                Console.Write("\nEnter date and time as dd/MM/yyyy HH:mm (24 hour clock): ");
                 string? input = Console.ReadLine();
                 if (input == null) continue;
                 DateTime start;
